@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_mains",
+  "info": {
+    "singularName": "blog-main",
+    "pluralName": "blog-mains",
+    "displayName": "blog-main"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
+    }
+  }
+}
