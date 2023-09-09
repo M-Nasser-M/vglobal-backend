@@ -51,6 +51,24 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  email: {
+    config: {
+      provider: "nodemailer",
+      providerOptions: {
+        host: env("SMTP_HOST", "smtp-mail.outlook.com"),
+        port: env("SMTP_PORT", 587),
+        auth: {
+          user: env("SMTP_USERNAME", "momom_2011@hotmail.com"),
+          pass: env("SMTP_PASSWORD", "@081994aA@"),
+        },
+        // ... any custom nodemailer options
+      },
+      settings: {
+        defaultFrom: "momom_2011@hotmail.com",
+        defaultReplyTo: "momom_2011@hotmail.com",
+      },
+    },
+  },
   "local-image-sharp": {
     config: {
       cacheDir: ".image-cache",
