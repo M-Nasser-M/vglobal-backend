@@ -69,6 +69,13 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  "users-permissions": {
+    config: {
+      register: {
+        allowedFields: ["dateOfBirth"],
+      },
+    },
+  },
   "local-image-sharp": {
     config: {
       cacheDir: ".image-cache",

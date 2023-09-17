@@ -1,16 +1,18 @@
 {
   "kind": "singleType",
-  "collectionName": "temporary_immigrations",
+  "collectionName": "visits",
   "info": {
-    "singularName": "temporary-immigration",
-    "pluralName": "temporary-immigrations",
-    "displayName": "temporary-immigration-main",
-    "description": ""
+    "singularName": "visit",
+    "pluralName": "visits",
+    "displayName": "visit"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {
+    "versions": {
+      "versioned": true
+    },
     "i18n": {
       "localized": true
     }
@@ -32,6 +34,9 @@
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
         "i18n": {
           "localized": true
         }

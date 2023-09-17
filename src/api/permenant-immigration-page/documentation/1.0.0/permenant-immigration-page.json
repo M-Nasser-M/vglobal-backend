@@ -1,5 +1,5 @@
 {
-  "/temporary-immigration": {
+  "/permenant-immigration-pages": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TemporaryImmigrationResponse"
+                "$ref": "#/components/schemas/PermenantImmigrationPageListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Temporary-immigration"
+        "Permenant-immigration-page"
       ],
       "parameters": [
         {
@@ -169,16 +169,16 @@
           }
         }
       ],
-      "operationId": "get/temporary-immigration"
+      "operationId": "get/permenant-immigration-pages"
     },
-    "put": {
+    "post": {
       "responses": {
         "200": {
           "description": "OK",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TemporaryImmigrationResponse"
+                "$ref": "#/components/schemas/PermenantImmigrationPageResponse"
               }
             }
           }
@@ -235,16 +235,188 @@
         }
       },
       "tags": [
-        "Temporary-immigration"
+        "Permenant-immigration-page"
       ],
       "parameters": [],
-      "operationId": "put/temporary-immigration",
+      "operationId": "post/permenant-immigration-pages",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/TemporaryImmigrationRequest"
+              "$ref": "#/components/schemas/PermenantImmigrationPageRequest"
+            }
+          }
+        }
+      }
+    }
+  },
+  "/permenant-immigration-pages/{id}": {
+    "get": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PermenantImmigrationPageResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Permenant-immigration-page"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "operationId": "get/permenant-immigration-pages/{id}"
+    },
+    "put": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PermenantImmigrationPageResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Permenant-immigration-page"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "operationId": "put/permenant-immigration-pages/{id}",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PermenantImmigrationPageRequest"
             }
           }
         }
@@ -315,13 +487,24 @@
         }
       },
       "tags": [
-        "Temporary-immigration"
+        "Permenant-immigration-page"
       ],
-      "parameters": [],
-      "operationId": "delete/temporary-immigration"
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "operationId": "delete/permenant-immigration-pages/{id}"
     }
   },
-  "/temporary-immigration/localizations": {
+  "/permenant-immigration-pages/{id}/localizations": {
     "post": {
       "responses": {
         "200": {
@@ -329,7 +512,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TemporaryImmigrationLocalizationResponse"
+                "$ref": "#/components/schemas/PermenantImmigrationPageLocalizationResponse"
               }
             }
           }
@@ -386,16 +569,27 @@
         }
       },
       "tags": [
-        "Temporary-immigration"
+        "Permenant-immigration-page"
       ],
-      "parameters": [],
-      "operationId": "post/temporary-immigration/localizations",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "operationId": "post/permenant-immigration-pages/{id}/localizations",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/TemporaryImmigrationLocalizationRequest"
+              "$ref": "#/components/schemas/PermenantImmigrationPageLocalizationRequest"
             }
           }
         }

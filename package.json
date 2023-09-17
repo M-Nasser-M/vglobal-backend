@@ -1,7 +1,7 @@
 {
   "name": "vglobalbackend",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.9.0",
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
@@ -11,21 +11,21 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
-    "@notum-cz/strapi-plugin-content-versioning": "^0.4.10",
-    "@strapi/plugin-documentation": "^4.13.3",
-    "@strapi/plugin-i18n": "^4.13.3",
+    "@notum-cz/strapi-plugin-content-versioning": "^0.4.11",
+    "@strapi/plugin-documentation": "^4.13.6",
+    "@strapi/plugin-i18n": "^4.13.6",
     "@strapi/plugin-seo": "^1.9.5",
-    "@strapi/plugin-users-permissions": "4.13.3",
-    "@strapi/provider-email-nodemailer": "^4.13.3",
-    "@strapi/provider-upload-cloudinary": "^4.13.3",
-    "@strapi/strapi": "4.13.3",
+    "@strapi/plugin-users-permissions": "4.13.6",
+    "@strapi/provider-email-nodemailer": "^4.13.6",
+    "@strapi/provider-upload-cloudinary": "^4.13.6",
+    "@strapi/strapi": "4.13.6",
     "pg": "8.11.3",
     "strapi-plugin-duplicate-button": "^1.1.13",
     "strapi-plugin-import-export-entries": "^1.21.1",
     "strapi-plugin-local-image-sharp": "^1.7.0",
     "strapi-plugin-placeholder": "^4.4.0",
-    "strapi-plugin-publisher": "^1.4.0",
-    "strapi-plugin-transformer": "^3.1.0",
+    "strapi-plugin-publisher": "^1.4.1",
+    "strapi-plugin-transformer": "^3.1.1",
     "strapi-stripe": "^3.4.1"
   },
   "author": {
@@ -40,6 +40,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.5.9"
+    "@types/node": "^20.6.0"
   }
 }
