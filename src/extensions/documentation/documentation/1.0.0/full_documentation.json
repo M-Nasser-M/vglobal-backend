@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-09-19T03:53:49.144Z"
+    "x-generation-date": "2023-09-30T08:28:15.575Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -665,6 +665,7 @@
                                                                                         "action": {
                                                                                           "type": "string"
                                                                                         },
+                                                                                        "actionParameters": {},
                                                                                         "subject": {
                                                                                           "type": "string"
                                                                                         },
@@ -2072,8 +2073,20 @@
           "seo": {
             "$ref": "#/components/schemas/SharedSeoComponent"
           },
-          "article": {
+          "visit": {
             "type": "string"
+          },
+          "study": {
+            "type": "string"
+          },
+          "immigrate": {
+            "type": "string"
+          },
+          "labelandtooltip": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedLabelandtooltipComponent"
+            }
           },
           "locale": {
             "type": "string"
@@ -2092,8 +2105,20 @@
               "seo": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
               },
-              "article": {
+              "visit": {
                 "type": "string"
+              },
+              "study": {
+                "type": "string"
+              },
+              "immigrate": {
+                "type": "string"
+              },
+              "labelandtooltip": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedLabelandtooltipComponent"
+                }
               },
               "locale": {
                 "type": "string"
@@ -2222,8 +2247,20 @@
           "seo": {
             "$ref": "#/components/schemas/SharedSeoComponent"
           },
-          "article": {
+          "visit": {
             "type": "string"
+          },
+          "study": {
+            "type": "string"
+          },
+          "immigrate": {
+            "type": "string"
+          },
+          "labelandtooltip": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedLabelandtooltipComponent"
+            }
           },
           "createdAt": {
             "type": "string",
@@ -2306,6 +2343,20 @@
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "SharedLabelandtooltipComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "label": {
+            "type": "string"
+          },
+          "tooltip": {
+            "type": "string"
           }
         }
       },

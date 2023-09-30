@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_labelandtooltips",
+  "info": {
+    "displayName": "labelandtooltip"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "tooltip": {
+      "type": "text"
+    }
+  }
+}

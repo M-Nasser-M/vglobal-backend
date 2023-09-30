@@ -55,11 +55,11 @@ module.exports = ({ env }) => ({
     config: {
       provider: "nodemailer",
       providerOptions: {
-        host: env("SMTP_HOST", "smtp-mail.outlook.com"),
-        port: env("SMTP_PORT", 587),
+        host: env("SMTP_HOST", undefined),
+        port: env("SMTP_PORT", undefined),
         auth: {
-          user: env("SMTP_USERNAME", "momom_2011@hotmail.com"),
-          pass: env("SMTP_PASSWORD", "@081994aA@"),
+          user: env("SMTP_USERNAME", undefined),
+          pass: env("SMTP_PASSWORD", undefined),
         },
         // ... any custom nodemailer options
       },
