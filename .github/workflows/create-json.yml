@@ -27,5 +27,5 @@ jobs:
       - name: check json output
         id: check-json
         env:
-          output: ${{steps.create-task-definition-json.outputs}}
-        run: echo "task-def output $output"
+          JSONOUTPUT: ${{steps.create-task-definition-json.outputs}}
+        run: echo "JSONOUTPUT=$JSONOUTPUT" >> $GITHUB_OUTPUT
