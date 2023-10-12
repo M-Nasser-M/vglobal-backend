@@ -1,1 +1,181 @@
-
+{
+    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:172147881221:task-definition/vglobal-strapi-task:10",
+    "containerDefinitions": [
+        {
+            "name": "vglobal-strapi-container",
+            "image": "172147881221.dkr.ecr.eu-north-1.amazonaws.com/vglobal-strapi-pv:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "vglobal-strapi-container-1337-tcp",
+                    "containerPort": 1337,
+                    "hostPort": 1337,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "API_TOKEN_SALT",
+                    "value": "Rnp<93p:fNz<>QW@"
+                },
+                {
+                    "name": "DATABASE_NAME",
+                    "value": "vglobal"
+                },
+                {
+                    "name": "SMTP_USERNAME",
+                    "value": "momom_2011@hotmail.com"
+                },
+                {
+                    "name": "DATABASE_HOST",
+                    "value": "vglobal.cq2nc4ztaeea.eu-north-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "CLOUDINARY_KEY",
+                    "value": "672331572631627"
+                },
+                {
+                    "name": "SMTP_HOST",
+                    "value": "smtp-mail.outlook.com"
+                },
+                {
+                    "name": "DATABASE_PORT",
+                    "value": "5432"
+                },
+                {
+                    "name": "DATABASE_CLIENT",
+                    "value": "postgres"
+                },
+                {
+                    "name": "URL",
+                    "value": "http://localhost:1337"
+                },
+                {
+                    "name": "DATABASE_SSL",
+                    "value": "false"
+                },
+                {
+                    "name": "APP_KEYS",
+                    "value": "/jG7+4uiAncdfj0hqtK/6A==,gujiudv3Jo3n1zhcBt3lHQ==,KHfkzUy6RHubDcMjKp9ZUw==,I0JRjhRJ4iNfFiCYseWd2w=="
+                },
+                {
+                    "name": "SMTP_PORT",
+                    "value": "587"
+                },
+                {
+                    "name": "STRAPI_ADMIN_TEST_STRIPE_SECRET_KEY",
+                    "value": "sk_test_519V5SDFzs9j6lbmRMnJJLNINFtp2kx9iBfRe7K3XjZTvTX2glXiymji9747tWwj4xjeRW6roc5YT0m3tENvWlIc300Y08DoGiM"
+                },
+                {
+                    "name": "JWT_SECRET",
+                    "value": "PfLcwjJIX4kc8O9GoC1p2g=="
+                },
+                {
+                    "name": "ADMIN_JWT_SECRET",
+                    "value": "zby-/<G3NY!m9V%a"
+                },
+                {
+                    "name": "CLOUDINARY_SECRET",
+                    "value": "r90hpXGX4CKlie0V5beDHthXdIo"
+                },
+                {
+                    "name": "SMTP_PASSWORD",
+                    "value": "@081994aA@"
+                },
+                {
+                    "name": "DATABASE_USERNAME",
+                    "value": "postgres"
+                },
+                {
+                    "name": "NODE_ENV",
+                    "value": "production"
+                },
+                {
+                    "name": "STRAPI_ADMIN_LIVE_STRIPE_SECRET_KEY",
+                    "value": "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"
+                },
+                {
+                    "name": "TRANSFER_TOKEN_SALT",
+                    "value": "rsno+txSqo2P1EOo9yYaiw=="
+                },
+                {
+                    "name": "CLOUDINARY_NAME",
+                    "value": "dkxklabdn"
+                },
+                {
+                    "name": "DATABASE_PASSWORD",
+                    "value": "Vglobal_Admin"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/",
+                    "awslogs-region": "eu-north-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
+        }
+    ],
+    "family": "vglobal-strapi-task",
+    "taskRoleArn": "arn:aws:iam::172147881221:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::172147881221:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 10,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "1024",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2023-10-08T13:02:19.807Z",
+    "registeredBy": "arn:aws:iam::172147881221:root",
+    "tags": []
+}
