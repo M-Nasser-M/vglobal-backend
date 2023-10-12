@@ -82,7 +82,7 @@ jobs:
 
       - name: get task defenetion json from secretes
         id: create-task-definition-json
-        uses: tanyagray/create-json-string@1.1.0
+        uses: jsdaniell/create-json@v1.2.2
         with:
           name: ${{ env.ECS_TASK_DEFINITION }}
           json: ${{ secrets.TASK_DEFINITION_JSON }}
