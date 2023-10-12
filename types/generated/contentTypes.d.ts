@@ -362,595 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutUsAboutUs extends Schema.SingleType {
-  collectionName: 'about_uses';
-  info: {
-    singularName: 'about-us';
-    pluralName: 'about-uses';
-    displayName: 'about-us';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    article: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      >;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::about-us.about-us',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::about-us.about-us',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::about-us.about-us',
-      'oneToMany',
-      'api::about-us.about-us'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiBlogBlog extends Schema.CollectionType {
-  collectionName: 'blogs';
-  info: {
-    singularName: 'blog';
-    pluralName: 'blogs';
-    displayName: 'blog';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    article: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    cover: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::blog.blog',
-      'oneToMany',
-      'api::blog.blog'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiBlogMainBlogMain extends Schema.SingleType {
-  collectionName: 'blog_mains';
-  info: {
-    singularName: 'blog-main';
-    pluralName: 'blog-mains';
-    displayName: 'blog-main';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::blog-main.blog-main',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::blog-main.blog-main',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::blog-main.blog-main',
-      'oneToMany',
-      'api::blog-main.blog-main'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiBookConsultBookConsult extends Schema.SingleType {
-  collectionName: 'book_consults';
-  info: {
-    singularName: 'book-consult';
-    pluralName: 'book-consults';
-    displayName: 'book-consult';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    article: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::book-consult.book-consult',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::book-consult.book-consult',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::book-consult.book-consult',
-      'oneToMany',
-      'api::book-consult.book-consult'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiHomeHome extends Schema.SingleType {
-  collectionName: 'homes';
-  info: {
-    singularName: 'home';
-    pluralName: 'homes';
-    displayName: 'home';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    visit: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    study: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    immigrate: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    labelandtooltip: Attribute.Component<'shared.labelandtooltip', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::home.home',
-      'oneToMany',
-      'api::home.home'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiPermenantImmigrationPermenantImmigration
-  extends Schema.SingleType {
-  collectionName: 'permenant_immigrations';
-  info: {
-    singularName: 'permenant-immigration';
-    pluralName: 'permenant-immigrations';
-    displayName: 'permenant-immigration-main';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    article: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::permenant-immigration.permenant-immigration',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::permenant-immigration.permenant-immigration',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::permenant-immigration.permenant-immigration',
-      'oneToMany',
-      'api::permenant-immigration.permenant-immigration'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiPermenantImmigrationPagePermenantImmigrationPage
-  extends Schema.CollectionType {
-  collectionName: 'permenant_immigration_pages';
-  info: {
-    singularName: 'permenant-immigration-page';
-    pluralName: 'permenant-immigration-pages';
-    displayName: 'permenant-immigration-programs';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    versions: {
-      versioned: true;
-    };
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
-        i18n: {
-          localized: true;
-        };
-      }>;
-    article: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::permenant-immigration-page.permenant-immigration-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::permenant-immigration-page.permenant-immigration-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    versions: Attribute.Relation<
-      'api::permenant-immigration-page.permenant-immigration-page',
-      'manyToMany',
-      'api::permenant-immigration-page.permenant-immigration-page'
-    >;
-    vuid: Attribute.String;
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
-    versionComment: Attribute.String;
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
-    localizations: Attribute.Relation<
-      'api::permenant-immigration-page.permenant-immigration-page',
-      'oneToMany',
-      'api::permenant-immigration-page.permenant-immigration-page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiStudyStudy extends Schema.SingleType {
-  collectionName: 'studies';
-  info: {
-    singularName: 'study';
-    pluralName: 'studies';
-    displayName: 'study';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    versions: {
-      versioned: true;
-    };
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    article: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::study.study',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::study.study',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    versions: Attribute.Relation<
-      'api::study.study',
-      'manyToMany',
-      'api::study.study'
-    >;
-    vuid: Attribute.String;
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
-    versionComment: Attribute.String;
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
-    localizations: Attribute.Relation<
-      'api::study.study',
-      'oneToMany',
-      'api::study.study'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiVisitVisit extends Schema.SingleType {
-  collectionName: 'visits';
-  info: {
-    singularName: 'visit';
-    pluralName: 'visits';
-    displayName: 'visit';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    versions: {
-      versioned: true;
-    };
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    article: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::visit.visit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::visit.visit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    versions: Attribute.Relation<
-      'api::visit.visit',
-      'manyToMany',
-      'api::visit.visit'
-    >;
-    vuid: Attribute.String;
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
-    versionComment: Attribute.String;
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
-    localizations: Attribute.Relation<
-      'api::visit.visit',
-      'oneToMany',
-      'api::visit.visit'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -1450,6 +861,612 @@ export interface PluginStrapiStripeSsPayment extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUsAboutUs extends Schema.SingleType {
+  collectionName: 'about_uses';
+  info: {
+    singularName: 'about-us';
+    pluralName: 'about-uses';
+    displayName: 'about-us';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    article: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToMany',
+      'api::about-us.about-us'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+    versions: {
+      versioned: true;
+    };
+  };
+  attributes: {
+    article: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cover: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    versions: Attribute.Relation<
+      'api::blog.blog',
+      'manyToMany',
+      'api::blog.blog'
+    >;
+    vuid: Attribute.String;
+    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
+    versionComment: Attribute.String;
+    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
+    localizations: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBlogMainBlogMain extends Schema.SingleType {
+  collectionName: 'blog_mains';
+  info: {
+    singularName: 'blog-main';
+    pluralName: 'blog-mains';
+    displayName: 'blog-main';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-main.blog-main',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-main.blog-main',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog-main.blog-main',
+      'oneToMany',
+      'api::blog-main.blog-main'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBookConsultBookConsult extends Schema.SingleType {
+  collectionName: 'book_consults';
+  info: {
+    singularName: 'book-consult';
+    pluralName: 'book-consults';
+    displayName: 'book-consult';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    article: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::book-consult.book-consult',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::book-consult.book-consult',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::book-consult.book-consult',
+      'oneToMany',
+      'api::book-consult.book-consult'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    visit: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    study: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    immigrate: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    labelandtooltip: Attribute.Component<'shared.labelandtooltip', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::home.home',
+      'oneToMany',
+      'api::home.home'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPermenantImmigrationPermenantImmigration
+  extends Schema.SingleType {
+  collectionName: 'permenant_immigrations';
+  info: {
+    singularName: 'permenant-immigration';
+    pluralName: 'permenant-immigrations';
+    displayName: 'permenant-immigration-main';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    article: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::permenant-immigration.permenant-immigration',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::permenant-immigration.permenant-immigration',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::permenant-immigration.permenant-immigration',
+      'oneToMany',
+      'api::permenant-immigration.permenant-immigration'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPermenantImmigrationPagePermenantImmigrationPage
+  extends Schema.CollectionType {
+  collectionName: 'permenant_immigration_pages';
+  info: {
+    singularName: 'permenant-immigration-page';
+    pluralName: 'permenant-immigration-pages';
+    displayName: 'permenant-immigration-programs';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    versions: {
+      versioned: true;
+    };
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true;
+        };
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true;
+        };
+        i18n: {
+          localized: true;
+        };
+      }>;
+    article: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true;
+        };
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::permenant-immigration-page.permenant-immigration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::permenant-immigration-page.permenant-immigration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    versions: Attribute.Relation<
+      'api::permenant-immigration-page.permenant-immigration-page',
+      'manyToMany',
+      'api::permenant-immigration-page.permenant-immigration-page'
+    >;
+    vuid: Attribute.String;
+    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
+    versionComment: Attribute.String;
+    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
+    localizations: Attribute.Relation<
+      'api::permenant-immigration-page.permenant-immigration-page',
+      'oneToMany',
+      'api::permenant-immigration-page.permenant-immigration-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiStudyStudy extends Schema.SingleType {
+  collectionName: 'studies';
+  info: {
+    singularName: 'study';
+    pluralName: 'studies';
+    displayName: 'study';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    versions: {
+      versioned: true;
+    };
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    article: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true;
+        };
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::study.study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::study.study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    versions: Attribute.Relation<
+      'api::study.study',
+      'manyToMany',
+      'api::study.study'
+    >;
+    vuid: Attribute.String;
+    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
+    versionComment: Attribute.String;
+    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
+    localizations: Attribute.Relation<
+      'api::study.study',
+      'oneToMany',
+      'api::study.study'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiVisitVisit extends Schema.SingleType {
+  collectionName: 'visits';
+  info: {
+    singularName: 'visit';
+    pluralName: 'visits';
+    displayName: 'visit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    versions: {
+      versioned: true;
+    };
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    article: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true;
+        };
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::visit.visit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::visit.visit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    versions: Attribute.Relation<
+      'api::visit.visit',
+      'manyToMany',
+      'api::visit.visit'
+    >;
+    vuid: Attribute.String;
+    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
+    versionComment: Attribute.String;
+    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
+    localizations: Attribute.Relation<
+      'api::visit.visit',
+      'oneToMany',
+      'api::visit.visit'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1460,15 +1477,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::about-us.about-us': ApiAboutUsAboutUs;
-      'api::blog.blog': ApiBlogBlog;
-      'api::blog-main.blog-main': ApiBlogMainBlogMain;
-      'api::book-consult.book-consult': ApiBookConsultBookConsult;
-      'api::home.home': ApiHomeHome;
-      'api::permenant-immigration.permenant-immigration': ApiPermenantImmigrationPermenantImmigration;
-      'api::permenant-immigration-page.permenant-immigration-page': ApiPermenantImmigrationPagePermenantImmigrationPage;
-      'api::study.study': ApiStudyStudy;
-      'api::visit.visit': ApiVisitVisit;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::publisher.action': PluginPublisherAction;
@@ -1478,6 +1486,15 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::strapi-stripe.ss-product': PluginStrapiStripeSsProduct;
       'plugin::strapi-stripe.ss-payment': PluginStrapiStripeSsPayment;
+      'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::blog.blog': ApiBlogBlog;
+      'api::blog-main.blog-main': ApiBlogMainBlogMain;
+      'api::book-consult.book-consult': ApiBookConsultBookConsult;
+      'api::home.home': ApiHomeHome;
+      'api::permenant-immigration.permenant-immigration': ApiPermenantImmigrationPermenantImmigration;
+      'api::permenant-immigration-page.permenant-immigration-page': ApiPermenantImmigrationPagePermenantImmigrationPage;
+      'api::study.study': ApiStudyStudy;
+      'api::visit.visit': ApiVisitVisit;
     }
   }
 }

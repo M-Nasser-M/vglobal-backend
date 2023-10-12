@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,9 @@
   "pluginOptions": {
     "i18n": {
       "localized": true
+    },
+    "versions": {
+      "versioned": true
     }
   },
   "attributes": {
@@ -25,7 +29,8 @@
       "options": {
         "preset": "toolbar"
       },
-      "customField": "plugin::ckeditor5.CKEditor"
+      "customField": "plugin::ckeditor5.CKEditor",
+      "required": true
     },
     "title": {
       "pluginOptions": {
@@ -33,7 +38,8 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
       "pluginOptions": {
@@ -41,7 +47,8 @@
           "localized": true
         }
       },
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "seo": {
       "type": "component",
@@ -54,14 +61,15 @@
       "component": "shared.seo"
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
