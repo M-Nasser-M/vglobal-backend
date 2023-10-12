@@ -3,6 +3,8 @@ name: test-create-json
 on:
   push:
     branches: ["main"]
+env:
+  ECS_TASK_DEFINITION: task-defenetion.json
 
 jobs:
   deploy:
