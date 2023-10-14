@@ -88,10 +88,6 @@ module.exports = ({ env }) => ({
       size: 10,
     },
   },
-  "duplicate-button": true,
-  "content-versioning": {
-    enabled: true,
-  },
   "import-export-entries": {
     enabled: true,
   },

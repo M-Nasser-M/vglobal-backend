@@ -876,6 +876,9 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     i18n: {
       localized: true;
     };
+    versions: {
+      versioned: true;
+    };
   };
   attributes: {
     article: Attribute.RichText &
@@ -982,15 +985,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    versions: Attribute.Relation<
-      'api::blog.blog',
-      'manyToMany',
-      'api::blog.blog'
-    >;
-    vuid: Attribute.String;
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
-    versionComment: Attribute.String;
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
     localizations: Attribute.Relation<
       'api::blog.blog',
       'oneToMany',
@@ -1303,15 +1297,6 @@ export interface ApiPermenantImmigrationPagePermenantImmigrationPage
       'admin::user'
     > &
       Attribute.Private;
-    versions: Attribute.Relation<
-      'api::permenant-immigration-page.permenant-immigration-page',
-      'manyToMany',
-      'api::permenant-immigration-page.permenant-immigration-page'
-    >;
-    vuid: Attribute.String;
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
-    versionComment: Attribute.String;
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
     localizations: Attribute.Relation<
       'api::permenant-immigration-page.permenant-immigration-page',
       'oneToMany',
@@ -1376,15 +1361,6 @@ export interface ApiStudyStudy extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
-    versions: Attribute.Relation<
-      'api::study.study',
-      'manyToMany',
-      'api::study.study'
-    >;
-    vuid: Attribute.String;
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
-    versionComment: Attribute.String;
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
     localizations: Attribute.Relation<
       'api::study.study',
       'oneToMany',
@@ -1449,15 +1425,6 @@ export interface ApiVisitVisit extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
-    versions: Attribute.Relation<
-      'api::visit.visit',
-      'manyToMany',
-      'api::visit.visit'
-    >;
-    vuid: Attribute.String;
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
-    versionComment: Attribute.String;
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
     localizations: Attribute.Relation<
       'api::visit.visit',
       'oneToMany',
