@@ -867,7 +867,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     singularName: 'about-us';
     pluralName: 'about-uses';
     displayName: 'about-us';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -875,9 +874,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   pluginOptions: {
     i18n: {
       localized: true;
-    };
-    versions: {
-      versioned: true;
     };
   };
   attributes: {
@@ -887,7 +883,12 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
         {
           preset: 'toolbar';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
         i18n: {

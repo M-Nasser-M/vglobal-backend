@@ -4,8 +4,7 @@
   "info": {
     "singularName": "about-us",
     "pluralName": "about-uses",
-    "displayName": "about-us",
-    "description": ""
+    "displayName": "about-us"
   },
   "options": {
     "draftAndPublish": true
@@ -13,13 +12,15 @@
   "pluginOptions": {
     "i18n": {
       "localized": true
-    },
-    "versions": {
-      "versioned": true
     }
   },
   "attributes": {
     "article": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "customField",
       "options": {
         "preset": "toolbar"
@@ -29,12 +30,12 @@
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.seo"
     }
   }
 }
