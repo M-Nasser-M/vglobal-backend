@@ -867,6 +867,7 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     singularName: 'about-us';
     pluralName: 'about-uses';
     displayName: 'about-us';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -933,9 +934,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   pluginOptions: {
     i18n: {
       localized: true;
-    };
-    versions: {
-      versioned: true;
     };
   };
   attributes: {
@@ -1236,9 +1234,6 @@ export interface ApiPermenantImmigrationPagePermenantImmigrationPage
     draftAndPublish: true;
   };
   pluginOptions: {
-    versions: {
-      versioned: true;
-    };
     i18n: {
       localized: true;
     };
@@ -1313,14 +1308,12 @@ export interface ApiStudyStudy extends Schema.SingleType {
     singularName: 'study';
     pluralName: 'studies';
     displayName: 'study';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   pluginOptions: {
-    versions: {
-      versioned: true;
-    };
     i18n: {
       localized: true;
     };
@@ -1377,14 +1370,12 @@ export interface ApiVisitVisit extends Schema.SingleType {
     singularName: 'visit';
     pluralName: 'visits';
     displayName: 'visit';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   pluginOptions: {
-    versions: {
-      versioned: true;
-    };
     i18n: {
       localized: true;
     };

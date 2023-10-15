@@ -69,6 +69,12 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  placeholder: {
+    enabled: true,
+    config: {
+      size: 10,
+    },
+  },
   "users-permissions": {
     config: {
       register: {
@@ -82,13 +88,10 @@ module.exports = ({ env }) => ({
       maxAge: 604800,
     },
   },
-  placeholder: {
-    enabled: true,
-    config: {
-      size: 10,
-    },
-  },
   "import-export-entries": {
+    enabled: true,
+  },
+  "content-versioning": {
     enabled: true,
   },
 });

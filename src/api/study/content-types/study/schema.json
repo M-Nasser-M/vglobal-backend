@@ -4,15 +4,13 @@
   "info": {
     "singularName": "study",
     "pluralName": "studies",
-    "displayName": "study"
+    "displayName": "study",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {
-    "versions": {
-      "versioned": true
-    },
     "i18n": {
       "localized": true
     }

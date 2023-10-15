@@ -4,15 +4,13 @@
   "info": {
     "singularName": "visit",
     "pluralName": "visits",
-    "displayName": "visit"
+    "displayName": "visit",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {
-    "versions": {
-      "versioned": true
-    },
     "i18n": {
       "localized": true
     }

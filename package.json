@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
+    "@notum-cz/strapi-plugin-content-versioning": "^1.0.2",
     "@strapi/plugin-i18n": "^4.14.4",
     "@strapi/plugin-seo": "^1.9.5",
     "@strapi/plugin-users-permissions": "4.14.4",
