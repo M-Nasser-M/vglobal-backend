@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
-    "@notum-cz/strapi-plugin-content-versioning": "^1.0.2",
-    "@strapi/plugin-i18n": "^4.14.4",
+    "@notum-cz/strapi-plugin-content-versioning": "^1.1.2",
+    "@strapi/plugin-i18n": "^4.14.5",
     "@strapi/plugin-seo": "^1.9.5",
-    "@strapi/plugin-users-permissions": "4.14.4",
-    "@strapi/provider-email-nodemailer": "^4.14.4",
-    "@strapi/provider-upload-cloudinary": "^4.14.4",
-    "@strapi/strapi": "4.14.4",
+    "@strapi/plugin-users-permissions": "4.14.5",
+    "@strapi/provider-email-nodemailer": "^4.14.5",
+    "@strapi/provider-upload-cloudinary": "^4.14.5",
+    "@strapi/strapi": "4.14.5",
     "pg": "8.11.3",
     "strapi-plugin-import-export-entries": "^1.21.1",
     "strapi-plugin-local-image-sharp": "^1.7.0",
@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.8.6",
+    "@types/node": "^20.8.7",
     "aws-cdk-lib": "2.95.1",
     "constructs": "10.2.69"
   }

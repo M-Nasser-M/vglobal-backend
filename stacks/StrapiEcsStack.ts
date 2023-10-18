@@ -1,10 +1,38 @@
+import {
+  GatewayVpcEndpointAwsService,
+  SubnetType,
+  Vpc,
+} from "aws-cdk-lib/aws-ec2";
 import { ApplicationProtocol } from "aws-cdk-lib/aws-elasticloadbalancingv2";
 import { Bucket, RDS, Service, StackContext } from "sst/constructs";
 
 export function strapiStack({ stack }: StackContext) {
+  const sstVpc = new Vpc(stack, "sstVpc", {
+    natGateways: 0,
+    maxAzs: 2,
+    enableDnsHostnames: true,
+    enableDnsSupport: true,
+    gatewayEndpoints: { s3: { service: GatewayVpcEndpointAwsService.S3 } },
+    subnetConfiguration: [
+      { name: `A-${SubnetType.PUBLIC}`, subnetType: SubnetType.PUBLIC },
+      { name: `B-${SubnetType.PUBLIC}`, subnetType: SubnetType.PUBLIC },
+      {
+        name: `A-${SubnetType.PRIVATE_WITH_EGRESS}`,
+        subnetType: SubnetType.PRIVATE_WITH_EGRESS,
+      },
+      {
+        name: `B-${SubnetType.PRIVATE_WITH_EGRESS}`,
+        subnetType: SubnetType.PRIVATE_WITH_EGRESS,
+      },
+    ],
+    createInternetGateway: true,
+    vpcName: "sstVpc",
+  });
+
   const database = new RDS(stack, "Database", {
     engine: "postgresql13.9",
     defaultDatabaseName: "vglobal_sst",
+    cdk: { cluster: { vpc: sstVpc } },
   });
 
   const bucket = new Bucket(stack, "upload_sst");
@@ -15,11 +43,11 @@ export function strapiStack({ stack }: StackContext) {
     port: 1337,
     scaling: { cpuUtilization: 80, memoryUtilization: 80 },
     cdk: {
+      vpc: sstVpc,
       applicationLoadBalancerTargetGroup: {
         port: 1337,
         protocol: ApplicationProtocol.HTTP,
       },
-
       container: {
         environment: {
           DATABASE_CLIENT: "postgres",
