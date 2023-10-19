@@ -50,7 +50,7 @@ export function strapiStack({ stack }: StackContext) {
       },
       container: {
         environment: {
-          DATABASE_CLIENT: "postgres",
+          DATABASE_CLIENT: process.env.DATABASE_CLIENT,
           DATABASE_HOST: database.clusterEndpoint.hostname,
           DATABASE_PORT: `${database.clusterEndpoint.port}`,
           DATABASE_NAME: database.defaultDatabaseName,
@@ -60,18 +60,18 @@ export function strapiStack({ stack }: StackContext) {
           DATABASE_PASSWORD: `${database.cdk.cluster.secret.secretValueFromJson(
             "password"
           )}`,
-          DATABASE_SSL: "false",
-          CLOUDINARY_NAME: "dkxklabdn",
-          CLOUDINARY_KEY: "672331572631627",
-          CLOUDINARY_SECRET: "r90hpXGX4CKlie0V5beDHthXdIo",
+          DATABASE_SSL: process.env.DATABASE_SSL,
+          CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
+          CLOUDINARY_KEY: process.env.CLOUDINARY_KEY,
+          CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET,
           STRAPI_ADMIN_LIVE_STRIPE_SECRET_KEY:
-            "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",
+            process.env.STRAPI_ADMIN_LIVE_STRIPE_SECRET_KEY,
           STRAPI_ADMIN_TEST_STRIPE_SECRET_KEY:
-            "sk_test_519V5SDFzs9j6lbmR17qUqV9fucZlfRWTUXoUbbmOJaFGZwGEYpWBtjt3RIkNUE3W5q4UBGLL4f2nNmwgu3abaY9y00Ciqct4ev",
-          SMTP_USERNAME: "momom_2011@hotmail.com",
-          SMTP_PASSWORD: "@081994aA@",
-          SMTP_HOST: "smtp-mail.outlook.com",
-          SMTP_PORT: "587",
+            process.env.STRAPI_ADMIN_TEST_STRIPE_SECRET_KEY,
+          SMTP_USERNAME: process.env.SMTP_USERNAME,
+          SMTP_PASSWORD: process.env.SMTP_PASSWORD,
+          SMTP_HOST: process.env.SMTP_HOST,
+          SMTP_PORT: process.env.SMTP_PORT,
         },
       },
     },
