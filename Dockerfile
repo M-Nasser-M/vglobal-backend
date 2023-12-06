@@ -5,7 +5,8 @@ ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /vglobal-backend/
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json ssl ./
+RUN ls
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --omit=dev
 ENV PATH /vglobal-backend/node_modules/.bin:$PATH
 WORKDIR /vglobal-backend/app
@@ -21,8 +22,8 @@ WORKDIR /vglobal-backend/
 COPY --from=build /vglobal-backend/node_modules ./node_modules
 WORKDIR /vglobal-backend/app
 COPY --from=build /vglobal-backend/app ./
+COPY --from=build /vglobal-backend/ssl ./
 RUN ls
-RUN ls ../
 ENV PATH /vglobal-backend/node_modules/.bin:$PATH
 
 RUN chown -R node:node /vglobal-backend/app
