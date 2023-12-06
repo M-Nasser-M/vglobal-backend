@@ -6,7 +6,7 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /vglobal-backend/
 COPY package.json package-lock.json ./
-COPY /ssl ./
+COPY ./ssl ./
 RUN ls
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --omit=dev
 ENV PATH /vglobal-backend/node_modules/.bin:$PATH
