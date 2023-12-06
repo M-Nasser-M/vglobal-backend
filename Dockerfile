@@ -21,7 +21,6 @@ WORKDIR /vglobal-backend/
 COPY --from=build /vglobal-backend/node_modules ./node_modules
 WORKDIR /vglobal-backend/app
 COPY --from=build /vglobal-backend/app ./
-RUN ls
 ENV PATH /vglobal-backend/node_modules/.bin:$PATH
 
 RUN chown -R node:node /vglobal-backend/app
