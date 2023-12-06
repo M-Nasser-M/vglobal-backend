@@ -41,8 +41,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.8.6",
-    "aws-cdk-lib": "2.95.1",
-    "constructs": "10.2.69"
+    "@types/node": "^20.10.3"
   }
 }
