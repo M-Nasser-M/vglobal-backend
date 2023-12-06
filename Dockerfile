@@ -1,5 +1,5 @@
 # Creating multi-stage build for production
-FROM node:20-alpine as build
+FROM node:20.9-alpine as build
 RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev > /dev/null 2>&1
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
@@ -13,7 +13,7 @@ COPY . .
 RUN npm run build
 
 # Creating final production image
-FROM node:20-alpine
+FROM node:20.9-alpine
 RUN apk add --no-cache vips-dev
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
@@ -21,6 +21,7 @@ WORKDIR /vglobal-backend/
 COPY --from=build /vglobal-backend/node_modules ./node_modules
 WORKDIR /vglobal-backend/app
 COPY --from=build /vglobal-backend/app ./
+RUN ls
 ENV PATH /vglobal-backend/node_modules/.bin:$PATH
 
 RUN chown -R node:node /vglobal-backend/app
