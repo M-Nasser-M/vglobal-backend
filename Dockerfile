@@ -10,6 +10,7 @@ RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --omit=dev
 ENV PATH /vglobal-backend/node_modules/.bin:$PATH
 WORKDIR /vglobal-backend/app
 COPY . .
+COPY /home/runner/work/vglobal-backend/vglobal-backend/ssl/ .
 RUN ls
 RUN npm run build
 
