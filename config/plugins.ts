@@ -82,12 +82,6 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  "local-image-sharp": {
-    config: {
-      cacheDir: ".image-cache",
-      maxAge: 604800,
-    },
-  },
   "import-export-entries": {
     enabled: true,
   },
