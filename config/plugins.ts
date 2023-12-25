@@ -55,12 +55,14 @@ module.exports = ({ env }) => ({
     config: {
       provider: "nodemailer",
       providerOptions: {
+        name: "vglobal.ca", //emails were being discarded because we didn't put name option
         host: env("SMTP_HOST", undefined),
         port: env("SMTP_PORT", undefined),
         auth: {
           user: env("SMTP_USERNAME", undefined),
           pass: env("SMTP_PASSWORD", undefined),
         },
+        secure: true,
         // ... any custom nodemailer options
       },
       settings: {
