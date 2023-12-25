@@ -63,8 +63,7 @@ jobs:
           file-url: ${{secrets.SSL_DOWNLOAD_LINK}}
           file-name: "global-bundle.pem"
           location: "./ssl"
-          md5: "61378b2feefc9e333f87eac4c58b3dcd"
-          sha256: "2c151768edd48e9ef6719de74fdcbdebe290d1e87bc02ce9014ea6eea557d2a0"
+          md5: "d268b9ebb42f308ee716a93903b0aecb"
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
