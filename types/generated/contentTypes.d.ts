@@ -1400,6 +1400,43 @@ export interface ApiPermenantImmigrationPagePermenantImmigrationPage
   };
 }
 
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'Privacy-Policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    article: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStudyStudy extends Schema.SingleType {
   collectionName: 'studies';
   info: {
@@ -1552,6 +1589,7 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::permenant-immigration.permenant-immigration': ApiPermenantImmigrationPermenantImmigration;
       'api::permenant-immigration-page.permenant-immigration-page': ApiPermenantImmigrationPagePermenantImmigrationPage;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::study.study': ApiStudyStudy;
       'api::visit.visit': ApiVisitVisit;
     }

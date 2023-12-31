@@ -22,9 +22,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
-    "strapi-plugin-import-export-entries": "^1.23.0",
+    "strapi-plugin-import-export-entries": "^1.23.1",
     "strapi-plugin-placeholder": "^4.4.0",
-    "strapi-plugin-publisher": "^1.5.4",
+    "strapi-plugin-publisher": "^1.5.6",
     "strapi-plugin-transformer": "^3.1.2",
     "strapi-stripe": "^3.4.1",
     "styled-components": "^5.3.11"
@@ -41,6 +41,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.10.5"
+    "@types/node": "^20.10.6"
   }
 }
