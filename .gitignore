@@ -83,6 +83,7 @@ nbproject
 public/uploads/*
 !public/uploads/.gitkeep
 task-defenetion.json
+.strapi
 
 ############################
 # Node.js
