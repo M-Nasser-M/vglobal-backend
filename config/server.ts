@@ -4,12 +4,11 @@ export default ({ env }) => ({
   app: {
     keys: env.array("APP_KEYS"),
   },
-  url: env("PUBLIC_URL", "http://localhost:1337"),
+  url: env("PUBLIC_URL", undefined),
   webhooks: {
     populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
   },
   cron: {
     enabled: env.bool("CRON_ENABLED", true),
   },
-  serverURL: env("STRAPI_ADMIN_BACKEND_URL", ""),
 });
