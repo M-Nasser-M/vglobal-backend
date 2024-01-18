@@ -26,7 +26,21 @@ export default [
       },
     },
   },
-  "strapi::cors",
+  {
+    name: "strapi::cors",
+    config: {
+      origin: [
+        "vglobal.ca",
+        "strapi.vglobal.ca",
+        "vglobal-backend-production.up.railway.app",
+        "railway.app",
+        "up.railway.app",
+      ],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+      headers: ["Content-Type", "Authorization", "Origin", "Accept"],
+      keepHeaderOnError: true,
+    },
+  },
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
