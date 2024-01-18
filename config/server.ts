@@ -11,4 +11,5 @@ export default ({ env }) => ({
   cron: {
     enabled: env.bool("CRON_ENABLED", true),
   },
+  serverURL: env("STRAPI_ADMIN_BACKEND_URL", ""),
 });
