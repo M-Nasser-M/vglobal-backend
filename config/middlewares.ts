@@ -6,13 +6,20 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": ["'self'", "https:"],
+          "connect-src": [
+            "'self'",
+            "https:",
+            "strapi.vglobal.ca",
+            "vglobal.ca",
+          ],
           "img-src": [
             "'self'",
             "data:",
             "blob:",
             "market-assets.strapi.io",
             "res.cloudinary.com",
+            "strapi.vglobal.ca",
+            "vglobal.ca",
           ],
           "media-src": [
             "'self'",
@@ -20,6 +27,8 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             "res.cloudinary.com",
+            "strapi.vglobal.ca",
+            "vglobal.ca",
           ],
           upgradeInsecureRequests: null,
         },
